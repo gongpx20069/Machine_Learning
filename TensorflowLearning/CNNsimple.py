@@ -36,8 +36,6 @@ b_conv2 = bias_variable([64])
 h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
 h_pool2 = max_pool_2x2(h_conv2)
 #池化计算公式：
-#out_height=（(input_height - filter_height + padding_top+padding_bottom)/stride_height  ）+1
-#out_width=（(input_width - filter_width + padding_left+padding_right)/stride_width ）+1
 #全连接层初始化，这时候图片尺寸为7×7,通道数64,加入1024全连接层
 W_fc1 = weight_variable([7 * 7 * 64, 1024])
 b_fc1 = bias_variable([1024])
@@ -67,3 +65,24 @@ with tf.Session() as sess:
         batch = mnist.train.next_batch(50)
         sess.run(train_step, feed_dict={x: batch[0], y_: batch[1],keep_prob: 0.9})
         print 'step %d'%i,sess.run(accuracy,feed_dict={x:mnist.test.images,y_:mnist.test.labels,keep_prob: 1.0})
+                      
+                      
+                      
+'''
+ The TensorFlow Convolution example gives an overview about the difference between SAME and VALID :
+
+    For the SAME padding, the output height and width are computed as:
+
+    out_height = ceil(float(in_height) / float(strides[1]))
+
+    out_width = ceil(float(in_width) / float(strides[2]))
+
+And
+
+    For the VALID padding, the output height and width are computed as:
+
+    out_height = ceil(float(in_height - filter_height + 1) / float(strides1))
+
+    out_width = ceil(float(in_width - filter_width + 1) / float(strides[2]))
+
+'''
