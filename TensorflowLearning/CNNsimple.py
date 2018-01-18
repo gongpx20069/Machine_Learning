@@ -14,9 +14,10 @@ def bias_variable(shape):
   initial = tf.constant(0.1, shape=shape)
   return tf.Variable(initial)
 #定义卷积层，strides为步长,padding保证输入和输出是同一个大小
-#池化层的ksize为大小，strides为步长，padding保证输入和输出是同一个大小
+#池化层的ksize为大小，strides为步长，padding='same'可以保证在尾部填充0，而不丢弃信息
 def conv2d(x, W):
-  return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='SAME')
+  return tf.nn.conv2d(x, W, strides=[1, 1, 1, 1], padding='
+                      ')
 def max_pool_2x2(x):
   return tf.nn.max_pool(x, ksize=[1, 2, 2, 1],strides=[1, 2, 2, 1], padding='SAME')
 #一个卷积层通常接一个maxpooling，卷积在每个5x5的patch中算出32个特征。卷积的权重张量形状是[5, 5, 1, 32]，前两个维度是patch的大小，接着是输入的通道数目，最后是输出的通道数目。
