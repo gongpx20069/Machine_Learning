@@ -1,0 +1,25 @@
+import tensorflow as tf
+import cv2
+import numpy as np
+import os
+
+dirpath = 'birds'
+writer = tf.python_io.TFRecordWriter('Bird_train.tfrecords')
+
+index = 0
+for filename in os.listdir(dirpath):
+    filepath = os.path.join(dirpath,filename)
+    for img_name in os.listdir(filepath):
+        img_path = os.path.join(filepath,img_name)
+        img = cv2.imread(img_path)
+        img = cv2.resize(img, (224,224),interpolation=cv2.INTER_CUBIC)
+        img_raw=img.tobytes()
+        example = tf.train.Example(features=tf.train.Features(feature={
+            "label": tf.train.Feature(int64_list=tf.train.Int64List(value=[index])),
+            'img_raw': tf.train.Feature(bytes_list=tf.train.BytesList(value=[img_raw]))
+        })) 
+        writer.write(example.SerializeToString())
+    index+=1
+        
+writer.close()
+print('ok')
