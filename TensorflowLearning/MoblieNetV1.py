@@ -1,4 +1,10 @@
 #-*-coding:utf-8-*-
+'''
+在train_x和train_y中直接导入训练集
+在test_x和test_y中导入测试集
+注意:x.shape=[None,224,224,3], y.shape=[None,1000]
+根据具体要求改变输出神经元的个数
+'''
 import tensorflow as tf
 import cv2
 import numpy as np
