@@ -8,6 +8,8 @@ This is a library of machine learning. I designed it to learn more about machine
 
 2.Tensorflow实例CNN详解, 复现的VGG-16和moblilenetV1神经网络。(VGG16和MobilnetV1网络复现很完全，可以直接使用，但没有fineturn的话，数据集和训练时间都一定要大且长)
 
+2.Estimate(评估算法包)；目前里面有评估图像清晰的算法
+
 # 强烈推荐
 
 1, [vgg_fineturning](https://github.com/gongpx20069/Machine_Learning/tree/master/TensorflowLearning/vgg_fineturning) (可以直接使用，训练成本低，网络收敛快，能达到很高的准确度)
