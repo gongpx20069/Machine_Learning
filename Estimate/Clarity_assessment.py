@@ -4,7 +4,7 @@ import math
 def brenner(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     shape = np.shape(img)
     out = 0
@@ -16,14 +16,14 @@ def brenner(img):
 def Laplacian(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     return cv2.Laplacian(img,cv2.CV_64F).var()
 
 def SMD(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     shape = np.shape(img)
     out = 0
@@ -36,7 +36,7 @@ def SMD(img):
 def SMD2(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     shape = np.shape(img)
     out = 0
@@ -48,7 +48,7 @@ def SMD2(img):
 def variance(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     out = 0
     u = np.mean(img)
@@ -61,7 +61,7 @@ def variance(img):
 def energy(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     shape = np.shape(img)
     out = 0
@@ -73,7 +73,7 @@ def energy(img):
 def Vollath(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     shape = np.shape(img)
     u = np.mean(img)
@@ -86,7 +86,7 @@ def Vollath(img):
 def entropy(img):
     '''
     :param img:narray 二维灰度图像
-    :return: float 图像约清晰越大
+    :return: float 图像越清晰越大
     '''
     out = 0
     count = np.shape(img)[0]*np.shape(img)[1]
