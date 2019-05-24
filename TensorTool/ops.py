@@ -4,7 +4,7 @@ def Ck(input,k_size=3,k, slope=0.2, stride=2, reuse=False, norm='instance', is_t
 	""" A 3x3 Convolution-BatchNorm-LeakyReLU layer with k filters and stride 2
 	Args:
 		input: 4D tensor
-    k_size: The size of filter
+    		k_size: The size of filter
 		k: integer, number of filters (output depth)
 		slope: LeakyReLU's slope
 		stride: integer
@@ -12,7 +12,7 @@ def Ck(input,k_size=3,k, slope=0.2, stride=2, reuse=False, norm='instance', is_t
 		is_training: boolean or BoolTensor
 		reuse: boolean
 		name: string, e.g. 'C64'
-    padding:'SAME' or 'VALID'
+    		padding:'SAME' or 'VALID'
 	Returns:
 		4D tensor
 	"""
@@ -33,16 +33,16 @@ def Dense(input,slope=0.2,norm='instance',is_training=True,reuse = False,name = 
 		A dense layer with leaky relu
 	Args:
 		input:4D tensor
-    slope: LeakyReLU's slope
+    		slope: LeakyReLU's slope
 		reuse:boolean
 		use_sigmoid:boolean
-    norm: 'instance' or 'batch' or None
-    is_training: boolean or BoolTensor
+    		norm: 'instance' or 'batch' or None
+    		is_training: boolean or BoolTensor
 		name:string,e.g. 'dense'
-    activation: 'leakyrelu' or 'sigmoid' or None
+    		activation: 'leakyrelu' or 'sigmoid' or None
 		units:output layer point number
-
 	Returns:
+		1D tensor
 
 	"""
 	with tf.variable_scope(name, reuse=reuse):
