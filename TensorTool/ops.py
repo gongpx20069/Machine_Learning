@@ -35,7 +35,6 @@ def Dense(input,slope=0.2,norm='instance',is_training=True,reuse = False,name = 
 		input:4D tensor
     		slope: LeakyReLU's slope
 		reuse:boolean
-		use_sigmoid:boolean
     		norm: 'instance' or 'batch' or None
     		is_training: boolean or BoolTensor
 		name:string,e.g. 'dense'
