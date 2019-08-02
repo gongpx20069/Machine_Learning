@@ -8,8 +8,8 @@ def brenner(img):
     '''
     shape = np.shape(img)
     out = 0
-    for y in range(0, shape[0]):
-        for x in range(0, shape[1]-2):
+    for x in range(0, shape[0]-2):
+        for y in range(0, shape[1]):
             out+=(int(img[x+2,y])-int(img[x,y]))**2
     return out
 
@@ -27,8 +27,8 @@ def SMD(img):
     '''
     shape = np.shape(img)
     out = 0
-    for y in range(1, shape[0]):
-        for x in range(0, shape[1]-1):
+    for x in range(1, shape[0]-1):
+        for y in range(0, shape[1]):
             out+=math.fabs(int(img[x,y])-int(img[x,y-1]))
             out+=math.fabs(int(img[x,y]-int(img[x+1,y])))
     return out
@@ -40,8 +40,8 @@ def SMD2(img):
     '''
     shape = np.shape(img)
     out = 0
-    for y in range(0, shape[0]-1):
-        for x in range(0, shape[1]-1):
+    for x in range(0, shape[0]-1):
+        for y in range(0, shape[1]-1):
             out+=math.fabs(int(img[x,y])-int(img[x+1,y]))*math.fabs(int(img[x,y]-int(img[x,y+1])))
     return out
 
@@ -53,8 +53,8 @@ def variance(img):
     out = 0
     u = np.mean(img)
     shape = np.shape(img)
-    for y in range(0,shape[0]):
-        for x in range(0,shape[1]):
+    for x in range(0,shape[0]):
+        for y in range(0,shape[1]):
             out+=(img[x,y]-u)**2
     return out
 
@@ -65,8 +65,8 @@ def energy(img):
     '''
     shape = np.shape(img)
     out = 0
-    for y in range(0, shape[0]-1):
-        for x in range(0, shape[1]-1):
+    for x in range(0, shape[0]-1):
+        for y in range(0, shape[1]-1):
             out+=((int(img[x+1,y])-int(img[x,y]))**2)*((int(img[x,y+1]-int(img[x,y])))**2)
     return out
 
@@ -78,8 +78,8 @@ def Vollath(img):
     shape = np.shape(img)
     u = np.mean(img)
     out = -shape[0]*shape[1]*(u**2)
-    for y in range(0, shape[0]):
-        for x in range(0, shape[1]-1):
+    for x in range(0, shape[0]-1):
+        for y in range(0, shape[1]):
             out+=int(img[x,y])*int(img[x+1,y])
     return out
 
