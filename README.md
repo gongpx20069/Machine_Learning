@@ -1,6 +1,6 @@
 # Machine_Learning
 
-This is a library of machine learning. I designed it to learn more about machine learning.
+这是我学习机器学习的一个路程，也是我自己编写的机器学习包。将Tensorflow进行一定的封装处理，使得工作更为便利。同时在编写代码的过程中，我们可以从原理上理解机器学习算法的具体执行流程，理解神经网络的自然传播过程。
 
 ## 文件中目前有算法包:
 
