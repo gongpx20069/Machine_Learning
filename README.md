@@ -24,7 +24,7 @@
 
 包含了一些使用pytorch复现的论文，目前包含的论文有：
 
-**1. 《Event-based High Dynamic Range Image and Very High Frame Rate Video Generation using Conditional Generative Adversarial Networks》**
+[《Event-based High Dynamic Range Image and Very High Frame Rate Video Generation using Conditional Generative Adversarial Networks》](https://github.com/gongpx20069/Machine_Learning/tree/master/LearnTorch/Event2HDR)
 
 # 2. 强烈推荐
 
