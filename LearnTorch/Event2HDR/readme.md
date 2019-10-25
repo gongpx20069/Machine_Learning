@@ -11,3 +11,5 @@
 ![输入图像和输出图像](https://github.com/gongpx20069/Machine_Learning/blob/master/LearnTorch/Event2HDR/image/4779.png "InputOutput")
 
 ## 3. 关于训练好的模型
+
+[模型下载地址](https://github.com/gongpx20069/Machine_Learning/releases/tag/Event2HDR)
